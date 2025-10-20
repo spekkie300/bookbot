@@ -15,20 +15,22 @@ def main():
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
 
-    fp = sys.argv[1]
-    book_string = get_book_text(fp)
-    wc = get_word_count(book_string)
+    file_path = sys.argv[1]
+    book_string = get_book_text(file_path)
+    word_count = get_word_count(book_string)
     char_count = get_char_count(book_string)
     sorted_list = create_sorted_list(char_count)
 
     print("============ BOOKBOT ============")
     print("Analyzing book found at books/frankenstein.txt...")
     print("----------- Word Count ----------")
-    print(f"Found {wc} total words")
+    print(f"Found {word_count} total words")
     print("--------- Character Count -------")
+
     for char in sorted_list:
         if char["char"].isalpha():
             print(f"{char['char']}: {char['num']}")
+
     print("============= END ===============")
 
 
