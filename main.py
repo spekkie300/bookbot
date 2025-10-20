@@ -1,5 +1,6 @@
 from stats import get_word_count
 from stats import get_char_count
+from stats import create_sorted_list
 
 
 def get_book_text(filepath):
@@ -13,9 +14,10 @@ def main():
     book_string = get_book_text(fp)
     wc = get_word_count(book_string)
     char_count = get_char_count(book_string)
+    sorted_list = create_sorted_list(char_count)
 
     print(f"Found {wc} total words")
-    print(char_count)
+    print(sorted_list)
 
 
 main()
